@@ -1,6 +1,11 @@
+const withPWA = require("next-pwa");
 const appConfig = require("./config");
 
-module.exports = {
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    disable: false
+  },
   /**
    * `serverRuntimeConfig` is available in browser code, ONLY when run on the server
    * @example
@@ -49,4 +54,4 @@ module.exports = {
 
     return webpackConfig;
   }
-};
+});

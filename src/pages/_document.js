@@ -64,6 +64,10 @@ class HTMLDocument extends Document {
     const links = [
       { rel: "canonical", href: publicRuntimeConfig.canonicalUrl },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" },
+      {
+        rel:'manifest',
+        href:'/manifest.json'
+      },
       ...favicons
     ];
     const meta = [
@@ -71,7 +75,89 @@ class HTMLDocument extends Document {
       {
         name: "viewport",
         content: "user-scalable=0, initial-scale=1 minimum-scale=1, width=device-width, height=device-height"
-      }
+      },
+      {
+        name:'application-name',
+        content:'Example Strorefront PWA' },
+      {
+        name:'apple-mobile-web-app-capable',
+        content:'yes' },
+      {
+        name:'apple-mobile-web-app-status-bar-style',
+        content:'default' },
+      {
+        name:'apple-mobile-web-app-title',
+        content:'Example Strorefront PWA'
+      },
+      {
+        name:'description',
+        content:'Example Strorefront PWA'
+      },
+      {
+        name:'format-detection',
+        content:'telephone=no'
+      },
+      {
+        name:'mobile-web-app-capable',
+        content:'yes'
+      },
+      {
+        name:'msapplication-TileColor',
+        content:'#2B5797'
+      },
+      {
+        name:'msapplication-tap-highlight',
+        content:'no'
+      },
+      {
+        name:'theme-color',
+        content:'#000000'
+      },
+      {
+        name:'application-name',
+        content:'Example Strorefront PWA'
+      },
+      {
+        name:'apple-mobile-web-app-capable',
+        content:'yes'
+      },
+      {
+        name:'apple-mobile-web-app-status-bar-style',
+        content:'default'
+      },
+      {
+        name:'apple-mobile-web-app-title',
+        content:'Example Strorefront PWA'
+      },
+      {
+        name:'description',
+        content:'Best Example Strorefront PWA in the world'
+      },
+      {
+        name:'format-detection',
+        content:'telephone=no'
+      },
+      {
+        name:'mobile-web-app-capable',
+        content:'yes'
+      },
+      {
+        name:'msapplication-config',
+        content:'/static/icons/browserconfig.xml'
+      },
+      {
+        name:'msapplication-TileColor',
+        content:'#2B5797'
+      },
+      {
+        name:'msapplication-tap-highlight',
+        content:'no'
+      },
+      {
+        name:'theme-color',
+        content:'#000000'
+      },
+
     ];
 
     // PWA primary color
