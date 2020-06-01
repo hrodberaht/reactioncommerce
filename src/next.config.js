@@ -1,6 +1,11 @@
+const withPWA = require("next-pwa");
 const appConfig = require("./config");
 
-module.exports = {
+module.exports = withPWA({
+  pwa: {
+    dest: '../build/app/public',
+    disable: false
+  },
   /**
    * `serverRuntimeConfig` is available in browser code, ONLY when run on the server
    * @example
@@ -24,7 +29,10 @@ module.exports = {
       writeKey: appConfig.SEGMENT_ANALYTICS_WRITE_KEY || process.env.SEGMENT_ANALYTICS_WRITE_KEY
     },
     stripePublicApiKey: appConfig.STRIPE_PUBLIC_API_KEY || process.env.SEGMENT_ANALYTICS_WRITE_KEY,
-    enableSPARouting: appConfig.ENABLE_SPA_ROUTING || process.env.ENABLE_SPA_ROUTING
+    enableSPARouting: appConfig.ENABLE_SPA_ROUTING || process.env.ENABLE_SPA_ROUTING,
+    publicRuntimeConfig: {
+      staticFolder: '/public',
+    },
   },
   // NextJS builds to `/src/.next` by default. Change that to `/build/app`
   distDir: "../build/app",
@@ -42,6 +50,7 @@ module.exports = {
       type: "javascript/auto"
     });
 
+    webpackConfig.output.publicPath = "/public"
     // Duplicate versions of the styled-components package were being loaded, this config removes the duplication.
     // It creates an alias to import the es modules version of the styled-components package.
     // This is a workaround until the root issue is resolved: https://github.com/webpack/webpack/issues/9329
@@ -49,4 +58,4 @@ module.exports = {
 
     return webpackConfig;
   }
-};
+});

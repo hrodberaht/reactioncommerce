@@ -50,6 +50,10 @@ app
       res.redirect(301, config.EXTERNAL_GRAPHQL_URL);
     });
 
+    server.get("/sw.js", (req, res) => {
+      app.serveStatic(req, res, path.resolve("./public/sw.js"));
+    });
+
     // apply to routes starting with "/sitemap" and ending with ".xml"
     server.use(/^\/sitemap.*\.xml$/, sitemapRoutesHandler);
 

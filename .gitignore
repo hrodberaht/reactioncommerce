@@ -35,3 +35,5 @@ build
 docker-compose.override.yml
 
 .vercel
+src/public/sw.*
+src/public/workbox*

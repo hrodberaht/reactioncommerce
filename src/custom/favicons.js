@@ -17,10 +17,6 @@ const favicons = [
     href: "/static/favicons/favicon-16x16.png"
   },
   {
-    rel: "manifest",
-    href: "/static/favicons/manifest.json"
-  },
-  {
     rel: "mask-icon",
     color: "#5bbad5",
     href: "/static/favicons/safari-pinned-tab.svg"
